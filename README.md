@@ -9,7 +9,7 @@ Elaboração do minimundo e MER
   
     1 - Fazer um clone ( https://github.com/jjunio01/banco-de-dados.git) do repositorio em sua maquina local;
     2 - Executar o Arquivo 'brModelo' e abrir com diagrama FastFeira.brM3;
-    3 - Realizar as modificações necessárias;
+    3 - Realizar as modificações necessárias ( Antes das alterações realizar o git pull);
     4 - Salvar as alterações;
     5 - Efetuar o git add .;
     6 - git commit -m"COMENTARIO SOBRE AS ALTERAÇÕES REALIZADAS"
