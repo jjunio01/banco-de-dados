@@ -2,7 +2,7 @@
 
 Elaboração do minimundo e MER
 
-##Como contribuir
+## Como contribuir
     
     Verificar na caixa de e-mail vinculada ao GitHub e aceitar o convite para ser um colaborador.
    
@@ -16,7 +16,7 @@ Elaboração do minimundo e MER
     7 - git push origin master
     
     
-##Minimundo
+## Minimundo
 - [Minimundo](https://docs.google.com/document/d/1EXb_r57xTZIlhXlHEyooMcfqOUfG32Vvms5OPIVSF2Y/edit)
 
 
