@@ -23,6 +23,9 @@ Elaboração do minimundo e MER
 
  #### Modelo Entidade Relacionamento - MER
   ![MER](FastFeira.png)
+  
+ #### Modelo Relacional MR
+  ![MR](ModeloMR/ModeloMR.png)
 
 
 ## Colaboradores:
