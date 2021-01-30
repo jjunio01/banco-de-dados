@@ -62,7 +62,7 @@ nome varchar(45),
 id_venda integer not null,
 constraint pagamento_venda_fk foreign key (id_venda) references venda(id_venda)
 );
-alter table pagamento add column id_pagamento integer;
+alter table pagamento add column id_pagamento serial;
 alter table pagamento add constraint pagamento_pk primary key(id_pagamento, id_venda);
 
 
@@ -103,7 +103,7 @@ constraint pessoa_fisica_cliente_fk
 );
 
 create table pessoa_juridica (
-cnjp char(14),
+cnpj char(14),
 razao_social varchar(250) not null,
 nome_fantasia varchar(250) not null,
 id_cliente integer,
@@ -119,7 +119,7 @@ cidade varchar(30) not null,
 bairro varchar(45) not null,
 rua varchar (100) not null,
 complemento varchar(30),
-numero varchar(10) not null,
+numero varchar(10),
 cep varchar(15) not null,
 id_cliente integer not null,
 constraint endereco_pk primary key(id_endereco),
