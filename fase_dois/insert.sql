@@ -14,7 +14,7 @@ insert into pessoa_fisica(id_cliente, nome, cpf) values
 		(09, 'José da Silva', 88011122288),
 		(10, 'Daise de França Martins', 99011122299);
 		
-insert into telefone(id_cliente, numero)  values
+insert into telefone(id_cliente, numero1)  values
 		(01,99998888),
 		(02,77776666),
 		(03,55554444);
@@ -24,7 +24,7 @@ insert into usuario(id_cliente, login, senha) values
 		(02, 'Pedro112', 'pedro123'),
 		(03, 'Paulo212', 'paulo123');
 		
-insert into pessoa_juridica(id_cliente, razao_social, nome_fantasia, cnjp) values
+insert into pessoa_juridica(id_cliente, nome_social, nome_fantasia, cnjp) values
 		(11, 'INSTITUTO FEDERAL', 'IFPE Campus Garanhuns', 1076723900145),
 		(12, 'SENDAS DISTRIBUIDORA S/A', 'ASSAI ATACADISTA', 06057223000171),
 		(13, 'MAKRO ATACADISTA S A', 'PT 32 - Sao Luis', 47427653011907);
