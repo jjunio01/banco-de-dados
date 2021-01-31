@@ -1,3 +1,7 @@
+/*Para execucão dos demais scripts por favor comentar as linhas 141 e 142 antes da execução desse script,
+que se referem ao Drop Table de todas as tabelas, como solicitado no script CREAT.SQL da segunda fase, 
+atenciosamente equipe FestFeira*/
+
 create table cliente (
 id_cliente integer,
 constraint cliente_pk primary key(id_cliente)
@@ -62,7 +66,7 @@ nome varchar(45),
 id_venda integer not null,
 constraint pagamento_venda_fk foreign key (id_venda) references venda(id_venda)
 );
-alter table pagamento add column id_pagamento serial;
+alter table pagamento add column id_pagamento integer;
 alter table pagamento add constraint pagamento_pk primary key(id_pagamento, id_venda);
 
 
@@ -82,15 +86,15 @@ constraint telefone_pk primary key(numero, id_cliente),
 constraint telefone_cliente_fk foreign key (id_cliente) references cliente(id_cliente)
 );
 
-create table carrinho_produto (
+create table item_carrinho (
 id_carrinho integer,
 quantidade integer not null,
 id_produto integer,
 constraint id_carrinho_pk primary key(id_carrinho, id_produto)
 );
-alter table carrinho_produto add constraint carinho_produto_id_produto_fk 
+alter table item_carrinho add constraint item_carrinho_id_produto_fk 
 	foreign key(id_produto) references produto(ean);
-alter table carrinho_produto add constraint carinho_produto_id_carrinho_fk 
+alter table item_carrinho add constraint item_carrinho_id_carrinho_fk 
 	foreign key(id_carrinho) references carrinho(id_carrinho);
 
 create table pessoa_fisica (
@@ -125,3 +129,16 @@ id_cliente integer not null,
 constraint endereco_pk primary key(id_endereco),
 constraint endereco_cliente_fk foreign key (id_cliente) references cliente(id_cliente)
 );
+create table produto_feira(
+id_feira integer,
+id_produto integer,
+constraint produto_feira_pk primary key(id_feira, id_produto),
+constraint feira_produto_fk foreign key (id_produto)
+				references produto(ean),
+constraint produto_feira_produto_fk foreign key (id_feira)
+				references produto(ean)
+);
+
+DROP TABLE cliente, usuario, venda, carrinho, entrega, pagamento, item_carrinho,
+			produto, telefone, pessoa_fisica, pessoa_juridica, endereco, produto_feira;
+

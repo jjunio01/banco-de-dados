@@ -102,7 +102,8 @@ insert into produto(ean, nome, preco, descricao, unidade_de_medida) values
 		(58417704, 'Carne Bovina', 23.00, 'Acem sem osso', 'kilograma'),
 		(58417705, 'Achocolatado em Pó Nescau',4.99, 'Nescau 2.0', 'gramas'),
 		(58417706, 'Polpa Ninho', 3.54, 'Bandeja com 6 unidades', 'gramas'),
-		(58417710, 'Leite', 2.10, 'Leite de vaca em natura', 'litro');
+		(58417710, 'Leite', 2.10, 'Leite de vaca em natura', 'litro'),
+		(58417700, 'Cesta Básica', 467.42, 'Cesta básica', 'unidade');
 		
 insert into produto(ean, nome, preco,unidade_de_medida) values 
 		(58417707, 'Açucar Refinado União', 3.50, 'kilograma'),
@@ -110,31 +111,102 @@ insert into produto(ean, nome, preco,unidade_de_medida) values
 		(58417709, 'Ovos De Galinha', 0.59, 'unidade');
 		
 insert into venda(id_venda, status_venda, data_venda, data_entrega, id_cliente) values
-		(202101,'efetivada', '27-01-2021', '28-01-2021', 001),
-		(202102, 'cancelada', '26-01-2020','01-01-0001' , 002),
+		(202101,'efetivada', '27-01-2021', '28-01-2021',001),
+		(202102, 'cancelada', '26-01-2020','01-01-0001',002),
 		(202103, 'em análise', '01-01-2021','01-01-2021',003),
-		(202104, 'estornada', '23-12-2020', '24-12-2020',011),
-		(202105, 'efetivada', '28-01-2021','28-01-2021',015);
+		(202104, 'estornada', '23-12-2020', '24-12-2020',004),
+		(202105,'efetivada', '30-12-2020', '30-12-2020',005),
+		(202106, 'efetivada', '09-09-2009','10-10-2010',006),
+		(202107, 'estornada', '23-11-2016','23-11-2016',007),
+		(202108, 'efetivada', '23-12-2020', '24-12-2020',008),
+		(202109,'efetivada', '25-12-2020', '25-12-2020',009),
+		(202110, 'efetivada', '25-12-2020','25-12-2020',010),
+		(202111, 'em análise', '25-12-2020','25-12-2020',011),
+		(202112, 'estornada', '25-12-2020', '25-12-2020',012),
+		(202113, 'estornada', '23-11-2016','23-11-2016',013),
+		(202114, 'efetivada', '23-12-2020', '24-12-2020',014),
+		(202115,'efetivada', '25-12-2020', '25-12-2020',015),
+		(202116, 'efetivada', '25-12-2020','25-12-2020',016),
+		(202117, 'em análise', '25-12-2020','25-12-2020',017),
+		(202118, 'estornada', '23-11-2016','23-11-2016',018),
+		(202119, 'efetivada', '23-12-2020', '24-12-2020',019),
+		(202120,'efetivada', '25-12-2020', '25-12-2020',020),
+		(202121, 'efetivada', '25-12-2020','25-12-2020',011),
+		(202122, 'em análise', '25-12-2020','25-12-2020',011),
+		(202123, 'efetivada', '25-12-2020','25-12-2020',011);
 		
 insert into carrinho(id_carrinho, valor_total,id_venda, data_pedido, id_cliente) values
-		(001,1000.00,202101,'01-01-2021',001),
-		(002,2000.00,202102,'30-12-2018',002),
-		(003,3000.00,202103,'16-03-2019',003),
-		(004,4000.00,202104,'30-01-2020',011),
-		(005,5000.00,202105,'28-01-2021',015);
+		(001,260.17,202101,'01-01-2021',001),
+		(002,224.60,202102,'30-01-2021',002),
+		(003,15000000.00,202120,'01-01-2020',020),
+		(004,63.00,202103,'15-12-2020',004),
+		(005,59,202104,'26-03-1999',005),
+		(006,7080.00,202105,'12-12-2012',011),
+		(007,2450.00,202106,'30-01-2000',014),
+		(008,8720.00,202107,'12-04-2001',016),
+		(009,1980.00,202108, '30-01-2021',009),
+		(010,210.00, 202109,'23-06-2019',010);
+	
+insert into item_carrinho(id_carrinho, id_produto, quantidade) values
+		(001, 58417701, 3),
+		(001, 58417702, 2),
+		(001, 58417703, 1),
+		(001, 58417709, 30),
+		(001, 58417704, 2),
+		(002, 58417701, 1),
+		(002, 58417702, 1),
+		(002, 58417703, 1),
+		(002, 58417704, 1),
+		(002, 58417705, 1),
+		(002, 58417706, 1),
+		(002, 58417707, 1),
+		(002, 58417708, 1),
+		(002, 58417709, 1),
+		(002, 58417710, 1),
+		(003, 58417703, 93000),
+		(004, 58417710, 30),
+		(005, 58417709, 100),
+		(006, 58417706, 2000),
+		(007, 58417707, 700),
+		(008, 58417708, 800),
+		(009, 58417702, 200),
+		(010, 58417710, 100);
+		
 		
 insert into entrega(id_entrega, status_entrega,cidade, cep, estado, numero, rua,bairro, id_venda) values
-		(101,'entregue','Recife', 5522, 'PE', 23, 'Jose de Lira', 'Centro', 202101),
-		(102, 'cancelada','Rio de Janeiro', 0023, 'RJ', 65, 'Rua Copacabana', 'Copacabana',202102),
-		(103, 'entregue','Brasília', 6699, 'DF', 100, 'Av Palácio do Planalto','Alvorada', 202103),
-		(104, 'recolhida','Fortaleza', 3265, 'CE', 65986, 'Valadares de Almeida','Vila Velha', 202104),
-		(105, 'entregue','Garanhuns', 0013,'PE', 007,'Rua James Bond do Assaí','Heliópolis', 202105);
+		(101,'entregue','Recife', 55226000, 'PE', 23, 'Jose de Lira', 'Centro', 202101),
+		(102, 'cancelada','Rio de Janeiro', 89236000, 'RJ', 65, 'Rua Copacabana', 'Copacabana',202102),
+		(103, 'entregue','Brasília', 66996000, 'DF', 100, 'Av Palácio do Planalto','Alvorada', 202103),
+		(104, 'recolhida','Fortaleza', 32656000, 'CE', 65986, 'Valadares de Almeida','Vila Velha', 202104),
+		(105, 'entregue', 'Garanhuns', 56560000, 'PE', 100, 'Rua do IF', 'Meio do Mato', 202121),
+		(106, 'entregue', 'Garanhuns', 56560000, 'PE', 100, 'Rua do IF', 'Meio do Mato', 202122),
+		(107, 'entregue', 'Garanhuns', 56560000, 'PE', 100, 'Rua do IF', 'Meio do Mato', 202123),
+		(108, 'entregue', 'Caruaru', 58860000, 'PE', 659, 'Rua Sem Saída', 'Beco', 202108),
+		(109, 'cancelada', 'Capoeiras', 65931000, 'PE', 6596, 'Rua Do Centro', 'Centro', 202101),
+		(110, 'entregue','Garanhuns', 65986000,'PE', 007,'Rua James Bond do Assaí','Heliópolis', 202105);
 		
 insert into pagamento(id_pagamento, id_venda, dinheiro, valor_pago) values
-		(301, 202101,1000.00, 1000.00),
-		(302,202102,0.00,0.00),
-		(303,202103,3000.00,3000.00),
-		(304,202104,0.00,0.00);
+		(301, 202101, 260.17, 260.17),
+		(302, 202102, 0.00, 0.00),
+		(303, 202104, 0.00, 0.00),
+		(304, 202107, 8720, 0.00),
+		(305, 202112, 0.00, 0.00),
+		(306, 202113, 0.0, 0.00),
+		(307, 202118, 0.00, 0.00),
+		(308, 202103, 0.00, 0.00),
+		(310, 202105, 7080.00, 7080.00),
+		(312, 202108, 1980.00, 1980.00),
+		(313, 202109, 210, 210);
 		
-insert into pagamento(id_pagamento, id_venda, dinheiro, valor_pago, numero, cvv, validade, bandeira, nome) values
-		(305,202105,5000.00,0.00,40043,693,'01-11-2030','ELO', 'IFPE Garanhuns');
+insert into pagamento(id_pagamento, id_venda, valor_pago, numero, cvv, validade, bandeira, nome) values
+		(309,202120,15000000.00,40043,693,'01-11-2022','ELO', 'Supermercado Planalto'),
+		(311,202105,5000.00,40043,693,'01-11-2030','ELO', 'IFPE Garanhuns');
+		
+insert into produto_feira(id_feira, id_produto) values
+		(58417700, 58417703),
+		(58417700, 58417704),
+		(58417700, 58417701),
+		(58417700, 58417702),
+		(58417700, 58417707),
+		(58417700, 58417708),
+		(58417700, 58417709);
