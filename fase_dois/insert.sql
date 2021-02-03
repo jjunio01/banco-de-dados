@@ -41,6 +41,18 @@ insert into endereco(id_endereco,cep, cidade, bairro, rua, numero, estado, id_cl
 insert into endereco(id_endereco,cep, cidade, bairro, rua, estado, id_cliente) values
 		(512, 5563666, 'Garanhuns', 'Centro', 'Rua Boa Vista', 'Pernambuco', 012);
 		
+update endereco set cep = '556232001'
+where cidade = 'Garanhuns';
+
+update endereco set cep = '85651001'
+where cidade = 'São João';
+
+update endereco set cep = '96325001'
+where cidade = 'Capoeiras';
+
+update endereco set cep = '65891001'
+where cidade = 'Recife';
+		
 insert into telefone(id_cliente, numero)  values
 		(002,98657951),
 		(002,98656400),
@@ -185,6 +197,12 @@ insert into entrega(id_entrega, status_entrega,cidade, cep, estado, numero, rua,
 		(109, 'cancelada', 'Capoeiras', 65931000, 'PE', 6596, 'Rua Do Centro', 'Centro', 202101),
 		(110, 'entregue','Garanhuns', 65986000,'PE', 007,'Rua James Bond do Assaí','Heliópolis', 202105);
 		
+update entrega set status_entrega = 'recolhida'
+where id_entrega = 108;
+
+update entrega set id_venda = 202106
+where id_entrega = 104;
+		
 insert into pagamento(id_pagamento, id_venda, dinheiro, valor_pago) values
 		(301, 202101, 260.17, 260.17),
 		(302, 202102, 0.00, 0.00),
@@ -198,6 +216,12 @@ insert into pagamento(id_pagamento, id_venda, dinheiro, valor_pago) values
 		(312, 202108, 1980.00, 1980.00),
 		(313, 202109, 210, 210);
 		
+delete from pagamento 
+where id_pagamento = 312;
+
+delete from pagamento 
+where id_venda = 202101;
+		
 insert into pagamento(id_pagamento, id_venda, valor_pago, numero, cvv, validade, bandeira, nome) values
 		(309,202120,15000000.00,40043,693,'01-11-2022','ELO', 'Supermercado Planalto'),
 		(311,202105,5000.00,40043,693,'01-11-2030','ELO', 'IFPE Garanhuns');
@@ -210,3 +234,9 @@ insert into produto_feira(id_feira, id_produto) values
 		(58417700, 58417707),
 		(58417700, 58417708),
 		(58417700, 58417709);
+		
+delete from produto_feira
+where id_feira = 58417700 and id_produto = 58417709;
+
+delete from produto_feira
+where id_feira = 58417700 and id_produto = 58417708;
