@@ -1,4 +1,4 @@
-/*Para execução dos demais scripts por favor comentar as linhas 141 e 142 antes da execução desse script,
+/*Para execução dos demais scripts por favor comentar as linhas 142 e 143 antes da execução desse script,
 que se referem ao Drop Table de todas as tabelas, como solicitado no script CREAT.SQL da segunda fase, 
 atenciosamente equipe FestFeira*/
 
@@ -139,5 +139,5 @@ constraint produto_feira_produto_fk foreign key (id_feira)
 				references produto(ean)
 );
 
--- DROP TABLE cliente, usuario, venda, carrinho, entrega, pagamento, item_carrinho,
---			produto, telefone, pessoa_fisica, pessoa_juridica, endereco, produto_feira;
+DROP TABLE cliente, usuario, venda, carrinho, entrega, pagamento, item_carrinho,
+	produto, telefone, pessoa_fisica, pessoa_juridica, endereco, produto_feira;
